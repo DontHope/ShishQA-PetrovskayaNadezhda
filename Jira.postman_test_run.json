@@ -1,0 +1,234 @@
+{
+	"id": "f06ddd90-61a7-4281-b150-a84fd97c0541",
+	"name": "Jira",
+	"timestamp": "2021-04-23T15:24:06.000Z",
+	"collection_id": "15521834-e4fb7126-6525-48ab-8854-3d8fb0c5d01e",
+	"folder_id": 0,
+	"environment_id": "15521834-2bf1e903-71bf-43a0-a1fe-7859868d5545",
+	"totalPass": 11,
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "c31e5d7e-96ec-40ef-a85c-c1118b32119f",
+			"name": "createmeta",
+			"url": "http://89.223.126.182:8080/rest/api/2/issue/createmeta",
+			"time": 247,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Set environment's": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Set environment's": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				247
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Set environment's": true
+				}
+			]
+		},
+		{
+			"id": "1c3d964f-3e0b-4ad3-b170-3f67da4b93ad",
+			"name": "Issue",
+			"url": "http://89.223.126.182:8080/rest/api/2/issue",
+			"time": 306,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Set environment": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Set environment": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				306
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Set environment": true
+				}
+			]
+		},
+		{
+			"id": "5f9b52af-57d1-4486-89d5-e4086c056429",
+			"name": "issue",
+			"url": "http://89.223.126.182:8080/rest/api/2/issue/10371",
+			"time": 119,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Check summary & description": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check summary & description": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				119
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Check summary & description": true
+				}
+			]
+		},
+		{
+			"id": "c9be1d16-cb75-455f-95ea-e1987fcb894d",
+			"name": "transitions",
+			"url": "http://89.223.126.182:8080/rest/api/2/issue/10371/transitions",
+			"time": 118,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Set environment": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Set environment": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				118
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Set environment": true
+				}
+			]
+		},
+		{
+			"id": "217562fc-969d-4aa2-80f8-9930368cd17c",
+			"name": "transitions 2",
+			"url": "http://89.223.126.182:8080/rest/api/2/issue/10371/transitions",
+			"time": 184,
+			"responseCode": {
+				"code": 204,
+				"name": "No Content"
+			},
+			"tests": {
+				"Status code is 204": true
+			},
+			"testPassFailCounts": {
+				"Status code is 204": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				184
+			],
+			"allTests": [
+				{
+					"Status code is 204": true
+				}
+			]
+		},
+		{
+			"id": "247d7d60-3c7c-48a0-be5e-4ee6be071cf8",
+			"name": "issue 2",
+			"url": "http://89.223.126.182:8080/rest/api/2/issue/10371",
+			"time": 126,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Check status": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check status": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				126
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Check status": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 1100,
+	"collection": {
+		"requests": [
+			{
+				"id": "c31e5d7e-96ec-40ef-a85c-c1118b32119f",
+				"method": "GET"
+			},
+			{
+				"id": "1c3d964f-3e0b-4ad3-b170-3f67da4b93ad",
+				"method": "POST"
+			},
+			{
+				"id": "5f9b52af-57d1-4486-89d5-e4086c056429",
+				"method": "GET"
+			},
+			{
+				"id": "c9be1d16-cb75-455f-95ea-e1987fcb894d",
+				"method": "GET"
+			},
+			{
+				"id": "217562fc-969d-4aa2-80f8-9930368cd17c",
+				"method": "POST"
+			},
+			{
+				"id": "247d7d60-3c7c-48a0-be5e-4ee6be071cf8",
+				"method": "GET"
+			}
+		]
+	}
+}
