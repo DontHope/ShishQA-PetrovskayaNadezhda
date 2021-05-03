@@ -1,0 +1,48 @@
+body {
+    background:url(Космос.jpg);
+    background-size: cover;
+    color:#ffffff;
+    font-size: 120%;
+    
+    
+}
+h1 {
+    text-align:center;
+    font-size: 250%;
+    font-family:cursive;
+}
+
+h2  { text-align:left;
+    font-size: 130%;
+    font-family:cursive;
+}
+h3 {text-align:left;
+    font-size: 130%;
+    font-family:cursive; }
+
+    img {
+        border: 4px solid transparent;;
+       }
+
+    a:link {
+        color: #2600ff;
+    }
+    a:visited {
+        color: #ffffff;
+      }
+      a:active {
+        color: #5b06fa; 
+        border-bottom: 1px dashed;
+      }
+      a {
+        display: inline-block;
+        text-decoration: blink;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin: 15px 25px;
+        padding: 15px 20px;
+        font-size: 30px;
+        font-weight: bolder;
+        font-family: 'Montserrat', sans-serif;
+        transition: 0.4s ease-in-out;
+      }
