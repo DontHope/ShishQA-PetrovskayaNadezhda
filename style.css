@@ -1,37 +1,43 @@
 body {
-    background:url(Космос.jpg);
+    background:url(Фон.jpg);
     background-size: cover;
     color:#ffffff;
     font-size: 120%;
+        margin-right: 5%; 
+        margin-left: 5%; 
     
-    
+}
+
+#content {
+    width: 500px; 
+    margin: 0 auto 100px; 
 }
 h1 {
     text-align:center;
     font-size: 250%;
-    font-family:cursive;
+    font-family:serif;
 }
 
 h2  { text-align:left;
     font-size: 130%;
-    font-family:cursive;
+    font-family:serif;
 }
 h3 {text-align:left;
     font-size: 130%;
-    font-family:cursive; }
+    font-family:serif; }
 
     img {
         border: 4px solid transparent;;
        }
 
     a:link {
-        color: #2600ff;
+        color: #4533e993;
     }
     a:visited {
-        color: #ffffff;
+        color: #3816418e;
       }
       a:active {
-        color: #5b06fa; 
+        color: #ffffff; 
         border-bottom: 1px dashed;
       }
       a {
