@@ -1,0 +1,73 @@
+<html>
+<head>
+<title>Testclass.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #a9b7c6;}
+.s1 { color: #cc7832;}
+.s2 { color: #6a8759;}
+.s3 { color: #6897bb;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Testclass.java</font>
+</center></td></tr></table>
+<pre>
+<span class="s1">import </span><span class="s0">java.io.File</span><span class="s1">;</span>
+<span class="s1">import </span><span class="s0">java.io.IOException</span><span class="s1">;</span>
+<span class="s1">import </span><span class="s0">java.util.concurrent.TimeUnit</span><span class="s1">;</span>
+<span class="s1">import </span><span class="s0">org.apache.commons.io.FileUtils</span><span class="s1">;</span>
+<span class="s1">import </span><span class="s0">org.junit.After</span><span class="s1">;</span>
+<span class="s1">import </span><span class="s0">org.junit.Before</span><span class="s1">;</span>
+<span class="s1">import </span><span class="s0">org.junit.Test</span><span class="s1">;</span>
+<span class="s1">import </span><span class="s0">org.openqa.selenium.By</span><span class="s1">;</span>
+<span class="s1">import </span><span class="s0">org.openqa.selenium.OutputType</span><span class="s1">;</span>
+<span class="s1">import </span><span class="s0">org.openqa.selenium.TakesScreenshot</span><span class="s1">;</span>
+<span class="s1">import </span><span class="s0">org.openqa.selenium.WebDriver</span><span class="s1">;</span>
+<span class="s1">import </span><span class="s0">org.openqa.selenium.WebElement</span><span class="s1">;</span>
+<span class="s1">import </span><span class="s0">org.openqa.selenium.chrome.ChromeDriver</span><span class="s1">;</span>
+<span class="s1">import </span><span class="s0">org.openqa.selenium.interactions.Actions</span><span class="s1">;</span>
+<span class="s1">import </span><span class="s0">org.openqa.selenium.remote.Augmenter</span><span class="s1">;</span>
+
+    <span class="s1">public class </span><span class="s0">Testclass {</span>
+        <span class="s1">private </span><span class="s0">WebDriver driver</span><span class="s1">;</span>
+        <span class="s1">private </span><span class="s0">String baseUrl = </span><span class="s2">&quot;https://sandbox.cardpay.com/MI/cardpayment2.html?orderXml=PE9SREVSIFdBTExFVF9JRD0nODI5OScgT1JERVJfTlVNQkVSPSc0NTgyMTEnIEFNT1VOVD0nMjkxLjg2JyBDVVJSRU5DWT0nRVVSJyAgRU1BSUw9J2N1c3RvbWVyQGV4YW1wbGUuY29tJz4KPEFERFJFU1MgQ09VTlRSWT0nVVNBJyBTVEFURT0nTlknIFpJUD0nMTAwMDEnIENJVFk9J05ZJyBTVFJFRVQ9JzY3NyBTVFJFRVQnIFBIT05FPSc4NzY5OTA5MCcgVFlQRT0nQklMTElORycvPgo8L09SREVSPg==&amp;sha512=998150a2b27484b776a1628bfe7505a9cb430f276dfa35b14315c1c8f03381a90490f6608f0dcff789273e05926cd782e1bb941418a9673f43c47595aa7b8b0d&quot;</span><span class="s1">;</span>
+
+        <span class="s1">public </span><span class="s0">Testclass() {</span>
+        <span class="s0">}</span>
+
+        <span class="s0">@Before</span>
+        <span class="s1">public void </span><span class="s0">setUp() {</span>
+            <span class="s0">System.setProperty(</span><span class="s2">&quot;webdriver.chrome.driver&quot;</span><span class="s1">, </span><span class="s2">&quot;D:</span><span class="s1">\\</span><span class="s2">ShishQA-PetrovskayaNadezhda</span><span class="s1">\\</span><span class="s2">Test</span><span class="s1">\\</span><span class="s2">src</span><span class="s1">\\</span><span class="s2">chromedriver.exe&quot;</span><span class="s0">)</span><span class="s1">;</span>
+            <span class="s1">this</span><span class="s0">.driver = </span><span class="s1">new </span><span class="s0">ChromeDriver()</span><span class="s1">;</span>
+            <span class="s1">this</span><span class="s0">.driver.manage().timeouts().implicitlyWait(</span><span class="s3">30L</span><span class="s1">, </span><span class="s0">TimeUnit.SECONDS)</span><span class="s1">;</span>
+            <span class="s1">this</span><span class="s0">.driver.manage().window().fullscreen()</span><span class="s1">;</span>
+        <span class="s0">}</span>
+
+        <span class="s0">@Test</span>
+        <span class="s1">public void </span><span class="s0">test1() </span><span class="s1">throws </span><span class="s0">IOException {</span>
+            <span class="s1">this</span><span class="s0">.driver.get(</span><span class="s1">this</span><span class="s0">.baseUrl)</span><span class="s1">;</span>
+            <span class="s0">System.out.println(</span><span class="s2">&quot;good1&quot;</span><span class="s0">)</span><span class="s1">;</span>
+            <span class="s0">Actions builder = </span><span class="s1">new </span><span class="s0">Actions(</span><span class="s1">this</span><span class="s0">.driver)</span><span class="s1">;</span>
+            <span class="s0">System.out.println(</span><span class="s2">&quot;good2&quot;</span><span class="s0">)</span><span class="s1">;</span>
+            <span class="s0">WebElement element = </span><span class="s1">this</span><span class="s0">.driver.findElement(By.xpath(</span><span class="s2">&quot;//*[@id=</span><span class="s1">\&quot;</span><span class="s2">cvc-hint-toggle</span><span class="s1">\&quot;</span><span class="s2">]&quot;</span><span class="s0">))</span><span class="s1">;</span>
+            <span class="s0">System.out.println(</span><span class="s2">&quot;good3&quot;</span><span class="s0">)</span><span class="s1">;</span>
+            <span class="s0">builder.moveToElement(element).build().perform()</span><span class="s1">;</span>
+            <span class="s0">System.out.println(</span><span class="s2">&quot;good4&quot;</span><span class="s0">)</span><span class="s1">;</span>
+            <span class="s0">WebDriver augmentedDriver = (</span><span class="s1">new </span><span class="s0">Augmenter()).augment(</span><span class="s1">this</span><span class="s0">.driver)</span><span class="s1">;</span>
+            <span class="s0">File scrFile = (File)((TakesScreenshot)augmentedDriver).getScreenshotAs(OutputType.FILE)</span><span class="s1">;</span>
+            <span class="s0">FileUtils.copyFile(scrFile</span><span class="s1">, new </span><span class="s0">File(</span><span class="s2">&quot;D:</span><span class="s1">\\</span><span class="s2">ShishQA-PetrovskayaNadezhda</span><span class="s1">\\</span><span class="s2">screenshot.png&quot;</span><span class="s0">))</span><span class="s1">;</span>
+        <span class="s0">}</span>
+
+        <span class="s0">@After</span>
+        <span class="s1">public void </span><span class="s0">tearDown() {</span>
+            <span class="s1">this</span><span class="s0">.driver.quit()</span><span class="s1">;</span>
+        <span class="s0">}</span>
+    <span class="s0">}</span>
+
+</pre>
+</body>
+</html>
