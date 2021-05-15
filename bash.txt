@@ -1,0 +1,42 @@
+﻿#/!bin/bash  (оболочка)
+
+options=(   (Задаем массив)
+	'1'
+	"2"
+	'3'
+	'4'
+	'5'
+)
+echo 'Please choose an option'  (выводит на экран "Please choose an option")
+select input in "${options[@]}"; (создает меню из списка элементов массива options)
+ do
+	case "$input" in  (с помощью case мы один раз берём переменную и несколько раз применяем её)
+		"${options[0]}") (при вводе первой  переменной из массива options)
+			ls  (покажет список файлов в текущей директории)
+			;;
+		"${options[1]}") (при вводе первой  переменной)
+			date $'+Time: %T\nDate: %D'  (на экране будет показано текущее время и дата)
+			;;
+		"${options[2]}") при вводе первой  переменной 
+			read -p 'What file do you wish to check? ' finput (будет написано "What file do you wish to check?", задается переменная finput)
+			if [[ -d $finput ]]; then (если в переменной ввести имя папки в нужной директории)
+				format='%s is a directory.\n' (отображается сообщение "It is a directory")
+			elif [[ -f $finput ]]; then (если ввести имя файла из этой папки)
+				format='%s is a file.\n' (на экране отобазится"It is a file")
+			else (если)
+				format='%s does not exist.\n' ( в переменную ввести файл, папку не из этой директории,отобразится надпись "It does not exist")
+			fi
+			printf "$format" "$finput" (Команда printf выводит текст в заданном формате)
+			;;
+		"${options[3]}") (при вводе первой  переменной)
+			read -p 'Please enter filename: ' binput  (на экране отобразится "Please enter filename:")
+			cp "$binput"{,.bak} (выполнится команда копирования файла, расширение .bak. файл будет сохранен в текущей директории)
+			;;
+		"${options[4]}") (при вводе первой  переменной)
+			break  (команда выхода)
+			;;
+		*)
+			echo 'Not a valid option.' (при вводе не валидных значений появится  'Not a valid option.')
+			;;
+	esac (закрытие команды сase)
+done (закрытие команды select)
